@@ -22,7 +22,7 @@ gulp.task('watch', ['sass', 'copy.fonts', 'copy.html'], function(done) {
   watch('www/app/**/*.scss', function(){
     gulp.start('sass');
   });
-  watch('www/app/**/*.html', function(){
+  watch(['www/app/**/*.html', 'www/app/*html'], function(){
     gulp.start('copy.html');
   });
   bundle(true, done);
