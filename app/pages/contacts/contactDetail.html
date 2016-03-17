@@ -1,0 +1,26 @@
+<ion-navbar *navbar>
+  <ion-title>{{contact.name}}</ion-title>
+</ion-navbar>
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      Basic Info
+    </ion-list-header>
+    <ion-item>
+      <p>Type</p>
+      <h2>{{contact.type}}</h2>
+    </ion-item>
+    <ion-item>
+      <p>Phone</p>
+      <h2>{{contact.phone}}</h2>
+    </ion-item>
+    <ion-list-header>
+      Address
+    </ion-list-header>
+    <ion-item>
+      <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="false">
+        <sebm-google-map-marker [latitude]="marker.lat" [longitude]="marker.lng" [label]="marker.title"></sebm-google-map-marker>
+      </sebm-google-map>
+    </ion-item>
+  </ion-list>
+</ion-content>
