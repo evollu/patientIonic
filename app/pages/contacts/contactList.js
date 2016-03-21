@@ -32,7 +32,4 @@ export class ContactList {
 		this.nav.push(ContactDetail, { contact: detail });
 	}
 
-	track(contact) {
-		return contact.id + contact.lastUpdated
-	}
 }
