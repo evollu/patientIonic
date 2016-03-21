@@ -1,5 +1,10 @@
 <ion-navbar *navbar>
   <ion-title>{{contact.name}}</ion-title>
+  <ion-buttons end>
+    <button (click)="saveContact()">
+      Save
+    </button>
+  </ion-buttons>
 </ion-navbar>
 <ion-content>
   <ion-list>

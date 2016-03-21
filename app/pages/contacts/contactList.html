@@ -7,11 +7,7 @@
 <ion-content>
   <ion-list>
     <button ion-item *ngFor="#contact of contacts" (click)="showDetail(contact)">
-        <h2>{{contact.name}}</h2>
-        <p>{{contact.phone}}</p>
-      <ion-note item-right>
-        {{contact.type}}
-      </ion-note>
+      <contact-list-item [contact]="contact"></contact-list-item>
     </button>
   </ion-list>
 </ion-content>

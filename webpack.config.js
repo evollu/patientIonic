@@ -17,12 +17,18 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        include: path.resolve('node_modules/angular2'),
-        loader: 'strip-sourcemap'
+        loader: 'babel',
+        query: {
+          presets: ['es2015'],
+          plugins: ['transform-class-properties', 'transform-decorators-legacy']
+        },
+        include: path.resolve('app'),
+        exclude: /node_modules/
       },
       {
-        test: /\.ts$/,
-        loader: 'ts-loader'
+        test: /\.js$/,
+        include: path.resolve('node_modules/angular2'),
+        loader: 'strip-sourcemap'
       }
     ],
     noParse: [
@@ -36,6 +42,6 @@ module.exports = {
     alias: {
       'angular2': path.resolve('node_modules/angular2')
     },
-    extensions: ['', '.js', '.ts']
+    extensions: ['', '.js']
   }
 };
