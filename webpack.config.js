@@ -19,8 +19,8 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel',
         query: {
-          presets: ['es2015'],
-          plugins: ['transform-class-properties', 'transform-decorators-legacy']
+          presets: ['es2015', 'stage-0'],
+          plugins: ['transform-decorators-legacy']
         },
         include: path.resolve('app'),
         exclude: /node_modules/
@@ -43,5 +43,6 @@ module.exports = {
       'angular2': path.resolve('node_modules/angular2')
     },
     extensions: ['', '.js']
-  }
+  },
+  devtool: 'source-map'
 };

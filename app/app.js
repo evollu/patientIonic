@@ -3,15 +3,14 @@
 import { IonicApp, App, Platform, ActionSheet } from 'ionic-angular';
 import { ANGULAR2_GOOGLE_MAPS_PROVIDERS } from 'angular2-google-maps/core';
 
-import { ContactList } from './pages/contacts/contactList';
+import { AppStore } from './store';
 
-import { ContactService } from './pages/contacts/contactService';
-
+import { TabsPage } from './pages/tabs/tabs';
 
 @App({
 	templateUrl: 'build/app.html',
 	config: {}, // http://ionicframework.com/docs/v2/api/config/Config/,
-	providers: [ContactService, ANGULAR2_GOOGLE_MAPS_PROVIDERS]
+	providers: [ANGULAR2_GOOGLE_MAPS_PROVIDERS, AppStore]
 })
 export class MyApp {
 	static get parameters() {
@@ -23,7 +22,7 @@ export class MyApp {
 
 	constructor(platform, app) {
 		this.app = app;
-		this.contactListPage = ContactList;
+		this.rootPage = TabsPage;
 
 		platform.ready().then(() => {
 			// The platform is now ready. Note: if this callback fails to fire, follow
